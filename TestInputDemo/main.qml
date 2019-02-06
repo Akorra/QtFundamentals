@@ -21,7 +21,9 @@ Window {
 
         TextInput{ //single line
             id: textInputId
-            text: "Placeholder text for a single line"
+            text: "123"
+            //validator: DoubleValidator{bottom:-1000; top:1000}
+            validator: RegExpValidator{regExp: /^\d{5}(?:[-\s]\d{4})?$/} //regexp for zip code (5 digits spce or hiffen 4 digits
             wrapMode: TextInput.Wrap
             anchors.margins: textMargin
             anchors.fill: parent
@@ -40,7 +42,7 @@ Window {
                 width:100
                 clip:true //hides everything that goes out of bounds
                 wrapMode: TextEdit.Wrap //wraps text to bounds
-                anchors.top:textInputId.bottom
+                anchors.top: textInputId.bottom
                 anchors.topMargin:20
                 //textFormat: TextEdit.RichText //allows for html
                 text:"a lot of text carriage return \\r\r" + "makes a newline, so does newline character \\n\n" + "See?!?"
