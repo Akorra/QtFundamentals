@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>empty.jpg</file>
+        <file>fullGlass.jpg</file>
+        <file>stream.jpg</file>
+        <file>water.jpg</file>
+    </qresource>
+</RCC>
