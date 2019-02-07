@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>OwlAsleep.png</file>
+        <file>OwlAsleep3.gif</file>
+        <file>OwlAwake.png</file>
+        <file>OwlDrowsy.png</file>
+        <file>OwlFull_Transparent_small.png</file>
+        <file>Sun.png</file>
+        <file>Owls/owl.png</file>
+        <file>Owls/OwlAsleep_small.png</file>
+        <file>Owls/OwlAsleep.png</file>
+        <file>Owls/OwlAsleep2.png</file>
+        <file>Owls/OwlAsleep4.png</file>
+        <file>Owls/OwlAsleep5.png</file>
+        <file>Owls/OwlAsleep6.png</file>
+        <file>Owls/OwlAwake_small.png</file>
+        <file>Owls/OwlAwake.png</file>
+        <file>Owls/OwlDrowsy_small.png</file>
+        <file>Owls/OwlFull_Transparent.png</file>
+        <file>Owls/OwlFull.png</file>
+        <file>Owls/OwlWaking.png</file>
+    </qresource>
+</RCC>
