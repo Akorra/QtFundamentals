@@ -21,10 +21,12 @@ ApplicationWindow {
             width:95; height:width
             color:"darkmagenta"
         }
+
         Rectangle{
             width:90; height:width
             color:"deepskyblue"
         }
+
         Rectangle{
             //width:80; height:width
             color:"springgreen"
@@ -37,19 +39,23 @@ ApplicationWindow {
             Layout.minimumWidth: 25
             Layout.maximumWidth: 400
         }
+
         Rectangle{
             width:70; height:width
             color:"saddlebrown"
             Layout.alignment: Qt.AlignBottom
         }
+
         Rectangle{
             width:60; height:width
             color:"Coral"
         }
+
         Rectangle{
             width:50; height:width
             color:"dodgerblue"
         }
+
         Rectangle{
             width:40; height:width
             color:"magenta"

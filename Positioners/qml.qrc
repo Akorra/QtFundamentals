@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Rect50.qml</file>
+    </qresource>
+</RCC>
