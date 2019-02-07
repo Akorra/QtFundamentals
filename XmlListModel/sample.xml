@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modules>
+<module>
+  <author>tod-gentille</author>
+  <title>Transforms, Transitions and Animations</title>
+  <description>We’ll cover the more dynamic approach to modern interfaces and cover Transform, Scale, Rotation, Translation and  Animations. We'll spend most of the time on Animations including a in-depth look at "easings". Animations are easy in Qt Quick, it's just the breadth of options available can make it seem daunting.
+  </description>
+  <clips>
+    <clip href="qt-quick--m07-c01.wmv" title="Overview" bold="true"/>
+    <clip href="qt-quick--m07-c02.wmv" title="Transforms" bold="false"/>
+    <clip href="qt-quick--m07-c03.wmv" title="Demo: Transforms" bold="junk"/>
+    <clip href="qt-quick--m07-c04.wmv" title="Animation" bold="0"/>
+    <clip href="qt-quick--m07-c05.wmv" title="Easings"/>
+    <clip href="qt-quick--m07-c06.wmv" title="Demo: Easings"/>
+    <clip href="qt-quick--m07-c07.wmv" title="Controlling Animations"/>
+    <clip href="qt-quick--m07-c08.wmv" title="States"/>
+    <clip href="qt-quick--m07-c09.wmv" title="Demo: States"/>
+    <clip href="qt-quick--m07-c10.wmv" title="Summary"/>
+  </clips>
+</module>
+<module>
+  <author>tod-gentille</author>
+  <title>Positioning</title>
+  <description>This module will examine how Qt Quick achieves a fluid interface that both performs well and is easy to maintain. It starts with the basic but extremely important concept of Anchors. It then examines the basic positioners : Grid, Row and Column. It also explores their resizable counterparts GridLayout, RowLayout and ColumnLayout. The module finishes with a brief look at the Flow container.
+  </description>
+  <clips>
+    <clip href="qt-quick-fundamentals-m06-c01.wmv" title="Overview"/>
+    <clip href="qt-quick-fundamentals-m06-c02.wmv" title="Anchors"/>
+    <clip href="qt-quick-fundamentals-m06-c03.wmv" title="Demo: Anchors"/>
+    <clip href="qt-quick-fundamentals-m06-c04.wmv" title="Positioners"/>
+    <clip href="qt-quick-fundamentals-m06-c05.wmv" title="Demo: Positioners"/>
+    <clip href="qt-quick-fundamentals-m06-c06.wmv" title="QtQuick.Layouts"/>
+    <clip href="qt-quick-fundamentals-m06-c07.wmv" title="Demo: QtQuick.Layouts"/>
+    <clip href="qt-quick-fundamentals-m06-c08.wmv" title="Flow with Demo"/>
+    <clip href="qt-quick-fundamentals-m06-c09.wmv" title="Summary"/>
+  </clips>
+</module>
+</modules>
