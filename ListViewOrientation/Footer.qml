@@ -1,7 +1,6 @@
 import QtQuick 2.0
 
 Component{
-    id:footerId
     Rectangle{
         color: "darkturquoise"
         width: ListView.view.rowWidth

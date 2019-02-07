@@ -1,20 +1,17 @@
 import QtQuick 2.0
 
 Component{
+    id:headerId
     Rectangle{
-        id: dataRectId
-        width: rowWidth
+        color: "darkturquoise"
+        width: ListView.view.rowWidth
         height: ListView.view.rowHeight
-        opacity: index * .1 + .5
-        color: "green"
         Text{
-            id: dataTextId
-            text:model.index
+            text:"Header"
             anchors.centerIn: parent
             font.pointSize: parent.ListView.view.fontSize
-            opacity: 1
             color:"white"
-            horizontalAlignment: Qt.AlignCenter
+            rotation: isVertical? 0:-90
         }
     }
 }
