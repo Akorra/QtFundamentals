@@ -2,6 +2,7 @@ import QtQuick 2.9
 import QtQuick.Controls 1.4
 import QtQuick.Controls 2.5
 import QtQuick.Dialogs 1.2
+import QtQuick.Layouts 1.2
 
 ApplicationWindow {
     id: rootId
@@ -10,6 +11,9 @@ ApplicationWindow {
     property int fileIndex : 0
     property int colorIndex: 1
     property int fontIndex : 2
+    property int messageIndex: 3
+    property int customIndex: 4
+    //eproperty int buttonIndex: 5
     property string noSelection: "no Selection"
 
     function setModelValue(index, value){
@@ -17,9 +21,9 @@ ApplicationWindow {
     }
 
     visible: true
-    width: 640
+    width: 860
     height: 480
-    title: baseAppName + " - " + folderToOpenUrl
+    title: baseAppName
 
     Action{
         id:quitActionId
@@ -49,6 +53,20 @@ ApplicationWindow {
         onTriggered: fontDialogId.open()
     }
 
+    Action{
+        id:messageOpenActionId
+        text:"Show Message..."
+        icon.source: "images/message.png"
+        onTriggered: messageDialogId.open()
+    }
+
+    Action{
+        id:customDialogActionId
+        text:"Show Custom Dialog..."
+        icon.source: "images/date.png"
+        onTriggered: customDialogId.open()
+    }
+
     menuBar: MenuBar{
         Menu{
             title: qsTr("File")
@@ -64,6 +82,8 @@ ApplicationWindow {
             ToolButton{ action:folderOpenActionId }
             ToolButton{ action:colorOpenActionId }
             ToolButton{ action:fontOpenActionId }
+            ToolButton{ action:messageOpenActionId }
+            ToolButton{ action:customDialogActionId }
         }
     }
 
@@ -101,6 +121,9 @@ ApplicationWindow {
         ListElement{name:"File/Folder"; value:"no selection"}
         ListElement{name:"Color"; value:"no selection"}
         ListElement{name:"Font"; value:"no selection"}
+        ListElement{name:"Message"; value:"no selection"}
+        ListElement{name:"Custom"; value:"no selection"}
+        //ListElement{name:"Clicked"; value:""}
     }
 
     TableView{
@@ -109,4 +132,68 @@ ApplicationWindow {
         TableViewColumn{role: "name"; title:"Dialog Type"; width:100}
         TableViewColumn{role: "value"; title:"Result"; width:300}
     }
+
+    MessageDialog{
+        id:messageDialogId
+        title: baseAppName
+        text:"Don't you love Qt?"
+        icon: StandardIcon.Question
+        standardButtons: StandardButton.Yes | StandardButton.No
+        onYes: setModelValue(messageIndex, "Yes")
+        onNo:  setModelValue(messageIndex, "No")
+        //onAccepted: setModelValue(messageIndex, "Yes")
+        //onRejected: setModelValue(messageIndex, "No")
+    }
+
+    Dialog{
+        id : customDialogId
+        width: dialogRowid.width + 20
+        height : 200
+        signal heckYeahClicked()
+        Row{
+            id :dialogRowid
+            spacing : 6
+            Image{
+                source : "images/message.png"
+                width : 128 ; height: width
+            }
+            Text{
+                id : dialogTextId
+                text: "Don't you love Qt?"
+                font.pixelSize: 32
+                Row{
+                    anchors.top : parent.bottom
+                    anchors.topMargin: 12
+                    spacing : 6
+                    Button{
+                        text: "Yeah"
+                        onClicked: customDialogId.click(StandardButton.Ok)
+                    }
+                    Button{
+                       text: "Heck Yeah!"
+                       onClicked:{ customDialogId.heckYeahClicked()
+                           customDialogId.close()
+                       }
+                    }
+                }
+            }
+        }
+        onAccepted : setModelValue(customIndex, "Yeah")
+        onHeckYeahClicked: setModelValue(customIndex, "Heck Yeah!")
+    }
+
+    /*
+    Dialog{
+        id:customDialogId
+        width:300
+        height:350
+        Calendar{
+            id: calendarId
+            width: parent.width
+            onDoubleClicked: customDialogActionId.click(StandardButton.OK)
+        }
+        onAccepted: setModelValue(customIndex,calendarId.selectedDate.toLocaleDateString())
+        onButtonClicked: setModelValue(buttonIndex, clickedButton)
+    }
+    */
 }
