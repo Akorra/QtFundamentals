@@ -43,11 +43,19 @@ ApplicationWindow {
         XmlRole{name: "bold"; query:"boolean(@bold)"}
     }
 
+    XmlListModel{
+        id:omdbId
+        source: "http://www.omdbapi.com/?r=XML&s=Breaker Morant"
+        query:"//Movie[@Title and @Year]"
+        XmlRole{name: "title"; query:"@title/string()"}
+        XmlRole{name: "year"; query:"@Year/number()"}
+    }
+
     Column{
         spacing:10
         ListView{
             id:moduleViewId
-            width: 600; height:250
+            width: 600; height:150
             model: moduleId
             clip: true
             delegate: Column{
@@ -59,11 +67,19 @@ ApplicationWindow {
         }
         ListView{
             id:clipsViewId
-            width: 600; height: 250
+            width: 600; height: 150
             model: clipsId
             clip:true
             delegate:
                 Text{text:title; font.bold: bold; wrapMode: Text.WordWrap; width: 200}
+        }
+        ListView{
+            id:listViewId
+            width:  600; height: 100
+            model: omdbId
+            clip:true
+            delegate:
+                Text{text:year < 1981? title : title + " (not the original)"; wrapMode: Text.WordWrap; width: 200}
         }
     }
 }
